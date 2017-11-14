@@ -8,8 +8,9 @@ class Video():
 
 
 class Movie(Video):
-	"""docstring for Movie"""
+	"""used to store movie data"""
 	def __init__(self, title, duration, storyline, poster_image, youtube_trailer, release_date):
+		'''called the parent class's constructor to do the common initial thing'''
 		super(Movie, self).__init__(title, duration)
 		self.storyline = storyline
 		self.poster_image_url = poster_image
@@ -18,8 +19,9 @@ class Movie(Video):
 
 
 class Tv_Show(Video):
-	"""docstring for TV_Show"""
+	"""used to store tv_show data"""
 	def __init__(self, title, duration, storyline, poster_image, youtube_trailer, season, episode, tv_station):
+		'''called the parent class's constructor to do the common initial thing'''
 		super(Tv_Show, self).__init__(title, duration)
 		self.storyline = storyline
 		self.poster_image_url = poster_image

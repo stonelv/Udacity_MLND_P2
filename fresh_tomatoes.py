@@ -161,7 +161,7 @@ def create_tv_show_tiles_content(tv_shows):
         youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', tv_show.trailer_youtube_url)
         trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
-        # Append the tile for the movie with its content filled in
+        # Append the title for the tv_show with its content filled in
         content += tv_show_tile_content.format(
             tv_show_title=tv_show.storyline,
             poster_image_url=tv_show.poster_image_url,
@@ -173,7 +173,7 @@ def open_movies_page(movies, tv_shows):
   # Create or overwrite the output file
   output_file = open('fresh_tomatoes.html', 'w')
 
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
+  # Replace the placeholder for the movie titles with the actual dynamically generated content
   rendered_content = main_page_content.format(
     movie_tiles=create_movie_tiles_content(movies), 
     tv_show_tiles=create_tv_show_tiles_content(tv_shows)
